@@ -41,17 +41,17 @@ class DateTest extends \Codeception\Test\Unit
         $this->assertFalse($date);
     }
 
-    public function testCreateFromInterface()
+    public function testCreateFromImmutable()
     {
-        $date = Date::createFromInterface(new \DateTime('2001-02-03'));
+        $date = Date::createFromImmutable(new \DateTimeImmutable('2001-02-03'));
         $this->assertInstanceOf(Date::class, $date);
 
         $this->assertSame('2001-02-03T00:00:00.000+00:00', $date->format(Date::RFC3339_EXTENDED));
     }
 
-    public function testCreateFromImmutable()
+    public function testCreateFromInterface()
     {
-        $date = Date::createFromImmutable(new \DateTimeImmutable('2001-02-03'));
+        $date = Date::createFromInterface(new \DateTime('2001-02-03'));
         $this->assertInstanceOf(Date::class, $date);
 
         $this->assertSame('2001-02-03T00:00:00.000+00:00', $date->format(Date::RFC3339_EXTENDED));
