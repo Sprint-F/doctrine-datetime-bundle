@@ -1,0 +1,43 @@
+{
+    "name": "sprintf/doctrine-datetime-bundle",
+    "description": "Symfony Bundle by Sprint-F.RU designed to support date, datetime, daterange Postgres types",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "keywords": [
+        "Doctrine",
+        "date",
+        "datetime",
+        "daterange",
+        "Postgres"
+    ],
+    "authors": [
+        {
+            "name": "Albert Stepantsev",
+            "email": "albert.stepantsev@sprintf.ru"
+        }
+    ],
+    "homepage": "https://sprintf.ru",
+    "require": {
+        "php": "^8.3"
+    },
+    "require-dev": {
+        "codeception/codeception": "^5.1",
+        "codeception/module-asserts": "^3.0",
+        "codeception/module-phpbrowser": "*",
+        "friendsofphp/php-cs-fixer": "^3.26"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "SprintF\\Bundle\\Datetime\\": "src/",
+            "SprintF\\Bundle\\Datetime\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true
+        },
+        "sort-packages": true
+    }
+}
