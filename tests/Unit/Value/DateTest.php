@@ -57,6 +57,14 @@ class DateTest extends \Codeception\Test\Unit
         $this->assertSame('2001-02-03T00:00:00.000+00:00', $date->format(Date::RFC3339_EXTENDED));
     }
 
+    public function testCreateFromTimestamp()
+    {
+        $date = Date::createFromTimestamp(time());
+        $this->assertInstanceOf(Date::class, $date);
+        $today = new \DateTime('now');
+        $this->assertSame($today->format('Y').'-'.$today->format('m').'-'.$today->format('d').'T00:00:00.000+00:00', $date->format(Date::RFC3339_EXTENDED));
+    }
+
     public function testSetTime()
     {
         $this->expectException(\BadMethodCallException::class);

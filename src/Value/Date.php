@@ -38,6 +38,15 @@ class Date extends \DateTime implements \Stringable
         return self::createFromFormat('!'.self::ISO8601_DATE_ONLY, $object->format(self::ISO8601_DATE_ONLY));
     }
 
+    public static function createFromTimestamp(int|float $timestamp): self
+    {
+        if (PHP_VERSION_ID >= 80400) {
+            return parent::createFromTimestamp($timestamp)->nullTime();
+        } else {
+            return self::createFromFormat('U', $timestamp);
+        }
+    }
+
     #[\ReturnTypeWillChange]
     public function setTime($hour, $minute, $second = 0, $microsecond = 0): self
     {
