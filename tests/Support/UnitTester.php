@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace SprintF\Bundle\Datetime\Tests\Support;
 
 /**
- * Inherited Methods
+ * Inherited Methods.
+ *
  * @method void wantTo($text)
  * @method void wantToTest($text)
  * @method void execute($callable)
@@ -18,12 +19,12 @@ namespace SprintF\Bundle\Datetime\Tests\Support;
  * @method void pause($vars = [])
  *
  * @SuppressWarnings(PHPMD)
-*/
+ */
 class UnitTester extends \Codeception\Actor
 {
     use _generated\UnitTesterActions;
 
-    /**
+    /*
      * Define custom actions here
      */
 }
