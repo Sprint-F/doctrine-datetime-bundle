@@ -18,7 +18,10 @@
     ],
     "homepage": "https://sprintf.ru",
     "require": {
-        "php": "^8.3"
+        "php": "^8.3",
+        "symfony/dependency-injection": "^7.0",
+        "symfony/http-kernel": "^7.0",
+        "symfony/serializer": "^7.0"
     },
     "require-dev": {
         "codeception/codeception": "^5.1",
