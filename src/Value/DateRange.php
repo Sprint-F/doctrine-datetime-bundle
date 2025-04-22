@@ -94,14 +94,6 @@ class DateRange implements \Stringable
     }
 
     /**
-     * Проверка на совпадение двух периодов.
-     */
-    public function equals(self $that): bool
-    {
-        return $this->getBeginDate() == $that->getBeginDate() && $this->getEndDate() == $that->getEndDate();
-    }
-
-    /**
      * Проверка на то, что этот период содержит в себе другой.
      * Проверка нестрогая - совпадающие диапазоны тоже будут содержать в себе друг друга.
      */

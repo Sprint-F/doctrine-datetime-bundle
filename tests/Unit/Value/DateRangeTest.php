@@ -156,6 +156,24 @@ class DateRangeTest extends \Codeception\Test\Unit
         $dateRange = DateRange::fromString('[something,wrong]');
     }
 
+    public function testEquality()
+    {
+        $dateRange1 = DateRange::fromString('[,)');
+        $dateRange2 = DateRange::fromString('[,)');
+        $this->assertTrue($dateRange1 == $dateRange2);
+        $this->assertFalse($dateRange1 === $dateRange2);
+
+        $dateRange1 = DateRange::fromString('[2000-01-01,2001-02-03)');
+        $dateRange2 = DateRange::fromString('[2000-01-01,2001-02-03)');
+        $this->assertTrue($dateRange1 == $dateRange2);
+        $this->assertFalse($dateRange1 === $dateRange2);
+
+        $dateRange1 = DateRange::fromString('[2000-01-01,2001-02-03)');
+        $dateRange2 = DateRange::fromString('[2010-01-01,2011-02-03)');
+        $this->assertFalse($dateRange1 == $dateRange2);
+        $this->assertFalse($dateRange1 === $dateRange2);
+    }
+
     public function testContainsDate()
     {
         $today = new Date('today');
