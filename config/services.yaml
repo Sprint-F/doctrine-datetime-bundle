@@ -1,0 +1,3 @@
+services:
+  SprintF\Bundle\Datetime\Component\Serializer\Normalizer\DateNormalizer:
+    tags: ['serializer.normalizer']

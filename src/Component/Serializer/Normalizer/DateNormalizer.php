@@ -3,7 +3,6 @@
 namespace SprintF\Bundle\Datetime\Component\Serializer\Normalizer;
 
 use SprintF\Bundle\Datetime\Value\Date;
-use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
 use Symfony\Component\Serializer\Exception\InvalidArgumentException;
 use Symfony\Component\Serializer\Exception\NotNormalizableValueException;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -13,7 +12,6 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
  * Специальный нормалайзер для типа Date.
  * Нужен, поскольку стандартная денормализация упорно суёт текущее время в восстановленное значение.
  */
-#[AutoconfigureTag('serializer.normalizer')]
 class DateNormalizer implements NormalizerInterface, DenormalizerInterface
 {
     public function denormalize(mixed $data, string $type, ?string $format = null, array $context = []): mixed
