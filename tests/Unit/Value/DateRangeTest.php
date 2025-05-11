@@ -6,6 +6,8 @@ use SprintF\Bundle\Datetime\Tests\Support\UnitTester;
 use SprintF\Bundle\Datetime\Value\Date;
 use SprintF\Bundle\Datetime\Value\DateRange;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
+use Symfony\Component\Serializer\Mapping\Loader\AttributeLoader;
 use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
@@ -58,23 +60,48 @@ class DateRangeTest extends \Codeception\Test\Unit
 
     public function testNormalization()
     {
-        /*
-         * Тест пока не реализован. Нет возможности корректно запустить нормалайзер вне приложения Symfony.
-         *
+        $today = new Date('today');
+        $tomorrow = new Date('tomorrow');
+
         $encoders = [new JsonEncoder()];
-        $normalizers = [new DateTimeNormalizer(), new ObjectNormalizer()];
+        $normalizers = [
+            new DateTimeNormalizer(),
+            new ObjectNormalizer(classMetadataFactory: new ClassMetadataFactory(new AttributeLoader())),
+        ];
         $serializer = new Serializer($normalizers, $encoders);
 
-        // Бесконечный всюду диапазон
-        $dateRange = new DateRange(null, null);
-        $this->assertSame(['beginDate' => null, 'endDate' => null], $serializer->normalize($dateRange));
+        $object = (new class {
+            private $id;
 
-        // Бесконечный вправо диапазон
-        $today = new Date('today');
-        $Ymd = $today->format('Y-m-d');
-        $dateRange = new DateRange($today, null);
-        $this->assertSame(['beginDate' => $Ymd, 'endDate' => null], $serializer->normalize($dateRange));
-        */
+            public function setId($id): self
+            {
+                $this->id = $id;
+
+                return $this;
+            }
+
+            public function getId()
+            {
+                return $this->id;
+            }
+            private DateRange $period;
+
+            public function setPeriod(DateRange $period): self
+            {
+                $this->period = $period;
+
+                return $this;
+            }
+
+            public function getPeriod(): DateRange
+            {
+                return $this->period;
+            }
+        })->setId(42)->setPeriod(new DateRange($today, $tomorrow));
+
+        $json = $serializer->serialize($object, 'json');
+
+        $this->assertSame('{"id":42,"period":{"beginDate":"'.$today->format(Date::ISO8601_DATE_ONLY).'","endDate":"'.$tomorrow->format(Date::ISO8601_DATE_ONLY).'"}}', $json);
     }
 
     public function testFromStringInfinite()
