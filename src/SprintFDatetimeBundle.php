@@ -18,6 +18,11 @@ class SprintFDatetimeBundle extends AbstractBundle
         parent::build($container);
     }
 
+    public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
+    {
+        $container->import('../config/packages/doctrine.yaml');
+    }
+
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         $container->import('../config/services.yaml');

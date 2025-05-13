@@ -1,0 +1,10 @@
+doctrine:
+    dbal:
+        types:
+            date: 'SprintF\Bundle\Datetime\Doctrine\DBAL\Types\DateType'
+            datetime: 'SprintF\Bundle\Datetime\Doctrine\DBAL\Types\DateTimeType'
+            daterange: 'SprintF\Bundle\Datetime\Doctrine\DBAL\Types\DateRangeType'
+        mapping_types:
+            date: date
+            datetime: datetime
+            daterange: daterange
