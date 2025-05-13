@@ -6,9 +6,9 @@ use DateTimeImmutable;
 use DateTimeInterface;
 
 /**
- * @method static \DateTime createFromFormat(string $format, string $datetime, ?\DateTimeZone $timezone = null)
- * @method static \DateTime createFromImmutable(DateTimeImmutable $object)
- * @method static \DateTime createFromInterface(DateTimeInterface $object)
+ * @method static DateTime createFromFormat(string $format, string $datetime, ?\DateTimeZone $timezone = null)
+ * @method static DateTime createFromImmutable(DateTimeImmutable $object)
+ * @method static DateTime createFromInterface(DateTimeInterface $object)
  */
 class DateTime extends \DateTime implements \Stringable
 {
