@@ -11,7 +11,7 @@ use Doctrine\ORM\Query\SqlWalker;
 use Doctrine\ORM\Query\TokenType;
 
 /**
- * DateRangeContains := "daterange_contains_date" "(" ArithmeticPrimary "," ArithmeticPrimary ")".
+ * DateRangeContainsDate := "daterange_contains_date" "(" ArithmeticPrimary "," ArithmeticPrimary ")".
  */
 class DateRangeContainsDate extends FunctionNode implements TypedExpression
 {
