@@ -22,8 +22,10 @@
         "doctrine/dbal": "^3",
         "doctrine/orm": "^3",
         "symfony/dependency-injection": "^7.1",
+        "symfony/form": "^7.1",
         "symfony/http-kernel": "^7.1",
-        "symfony/serializer": "^7.1"
+        "symfony/serializer": "^7.1",
+        "symfony/translation": "^7.1"
     },
     "require-dev": {
         "codeception/codeception": "^5.1",
