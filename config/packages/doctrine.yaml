@@ -8,3 +8,8 @@ doctrine:
             date: date
             datetime: datetime
             daterange: daterange
+    orm:
+        dql:
+            string_functions:
+                daterange_contains_date: 'SprintF\Bundle\Datetime\Doctrine\ORM\Query\AST\Functions\DateRangeContainsDate'
+                daterange_intersects: 'SprintF\Bundle\Datetime\Doctrine\ORM\Query\AST\Functions\DateRangeIntersects'
