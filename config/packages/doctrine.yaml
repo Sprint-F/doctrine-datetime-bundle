@@ -13,3 +13,5 @@ doctrine:
             string_functions:
                 daterange_contains_date: 'SprintF\Bundle\Datetime\Doctrine\ORM\Query\AST\Functions\DateRangeContainsDate'
                 daterange_intersects: 'SprintF\Bundle\Datetime\Doctrine\ORM\Query\AST\Functions\DateRangeIntersects'
+                daterange_lower: 'SprintF\Bundle\Datetime\Doctrine\ORM\Query\AST\Functions\DateRangeLower'
+                daterange_upper: 'SprintF\Bundle\Datetime\Doctrine\ORM\Query\AST\Functions\DateRangeUpper'

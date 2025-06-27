@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 use function Symfony\Component\Translation\t;
 
 class DateRangeType extends AbstractType implements DataMapperInterface
