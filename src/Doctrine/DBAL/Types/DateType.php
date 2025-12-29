@@ -10,7 +10,15 @@ class DateType extends \Doctrine\DBAL\Types\DateType
 {
     public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
     {
-        return null === $value ? null : (string) $value;
+        if (null === $value) {
+            return null;
+        }
+
+        if ($value instanceof \Stringable) {
+            return (string) $value;
+        }
+
+        return parent::convertToDatabaseValue($value, $platform);
     }
 
     public function convertToPHPValue($value, AbstractPlatform $platform): ?Date

@@ -10,7 +10,15 @@ class DateTimeType extends \Doctrine\DBAL\Types\DateTimeType
 {
     public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
     {
-        return null === $value ? null : (string) $value;
+        if (null === $value) {
+            return null;
+        }
+
+        if ($value instanceof \Stringable) {
+            return (string) $value;
+        }
+
+        return parent::convertToDatabaseValue($value, $platform);
     }
 
     #[\ReturnTypeWillChange]
