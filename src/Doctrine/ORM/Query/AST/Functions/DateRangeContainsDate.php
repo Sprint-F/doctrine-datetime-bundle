@@ -20,7 +20,7 @@ class DateRangeContainsDate extends FunctionNode implements TypedExpression
 
     public function getSql(SqlWalker $sqlWalker): string
     {
-        return sprintf('%s @> %s::date',
+        return sprintf('%s::daterange @> %s::date',
             $this->rangeExpression->dispatch($sqlWalker),
             $this->elementExpression->dispatch($sqlWalker)
         );

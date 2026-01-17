@@ -25,6 +25,7 @@ class SprintFDatetimeBundle extends AbstractBundle
 
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
+        // Импортируем оснвоной конфиг сервисов бандла.
         $container->import('../config/services.yaml');
     }
 }
