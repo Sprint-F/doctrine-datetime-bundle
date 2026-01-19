@@ -59,7 +59,7 @@ class Date extends \DateTime implements \Stringable
     }
 
     #[\ReturnTypeWillChange]
-    public function setMicrosecond($microsecond = 0): self
+    public function setMicrosecond(int $microsecond = 0): static
     {
         throw new \BadMethodCallException();
     }
