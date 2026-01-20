@@ -14,7 +14,7 @@ class DateTime extends \DateTime implements \Stringable
 {
     public const string RUSSIAN_DATE_TIME = 'd.m.Y H:i:s';
 
-    public static function createFromTimestamp(int|float $timestamp): self
+    public static function createFromTimestamp(int|float $timestamp): static
     {
         if (PHP_VERSION_ID >= 80400) {
             return parent::createFromTimestamp($timestamp);
