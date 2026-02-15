@@ -4,7 +4,7 @@ namespace SprintF\Bundle\Datetime\Doctrine\DBAL\Types;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;
-use SprintF\Bundle\Datetime\Value\Date;
+use SprintF\ValueObjects\Type\Date;
 
 class DateType extends \Doctrine\DBAL\Types\DateType
 {

@@ -4,7 +4,7 @@ namespace SprintF\Bundle\Datetime\Tests\Unit\Component\Serializer\Normalizer;
 
 use SprintF\Bundle\Datetime\Component\Serializer\Normalizer\DateNormalizer;
 use SprintF\Bundle\Datetime\Tests\Support\UnitTester;
-use SprintF\Bundle\Datetime\Value\Date;
+use SprintF\ValueObjects\Type\Date;
 use Symfony\Component\Serializer\Exception\InvalidArgumentException;
 use Symfony\Component\Serializer\Exception\NotNormalizableValueException;
 

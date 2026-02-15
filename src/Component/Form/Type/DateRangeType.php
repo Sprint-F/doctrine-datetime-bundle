@@ -2,8 +2,8 @@
 
 namespace SprintF\Bundle\Datetime\Component\Form\Type;
 
-use SprintF\Bundle\Datetime\Value\Date;
-use SprintF\Bundle\Datetime\Value\DateRange;
+use SprintF\ValueObjects\Type\Date;
+use SprintF\ValueObjects\Type\DateRange;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\DataMapperInterface;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;

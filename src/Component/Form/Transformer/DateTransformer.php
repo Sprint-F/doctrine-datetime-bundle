@@ -2,7 +2,7 @@
 
 namespace SprintF\Bundle\Datetime\Component\Form\Transformer;
 
-use SprintF\Bundle\Datetime\Value\Date;
+use SprintF\ValueObjects\Type\Date;
 use Symfony\Component\Form\DataTransformerInterface;
 
 /**

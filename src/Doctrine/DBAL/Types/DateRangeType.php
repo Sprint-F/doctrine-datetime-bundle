@@ -4,7 +4,7 @@ namespace SprintF\Bundle\Datetime\Doctrine\DBAL\Types;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use SprintF\Bundle\Datetime\Value\DateRange;
+use SprintF\ValueObjects\Type\DateRange;
 
 class DateRangeType extends Type
 {

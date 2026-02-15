@@ -2,7 +2,7 @@
 
 namespace SprintF\Bundle\Datetime\Component\Serializer\Normalizer;
 
-use SprintF\Bundle\Datetime\Value\Date;
+use SprintF\ValueObjects\Type\Date;
 use Symfony\Component\Serializer\Exception\InvalidArgumentException;
 use Symfony\Component\Serializer\Exception\NotNormalizableValueException;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
