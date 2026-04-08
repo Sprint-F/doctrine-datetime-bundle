@@ -22,21 +22,21 @@
         "ext-dom": "*",
         "ext-intl": "*",
         "ext-mbstring": "*",
-        "doctrine/dbal": "^3",
+        "doctrine/dbal": "^3||^4",
         "doctrine/orm": "^3",
         "sprintf/value-objects": "^0.1.0",
-        "symfony/dependency-injection": "^7.4",
-        "symfony/form": "^7.4",
-        "symfony/http-kernel": "^7.4",
-        "symfony/serializer": "^7.4",
-        "symfony/translation": "^7.4"
+        "symfony/dependency-injection": "^7.4||^8.0",
+        "symfony/form": "^7.4||^8.0",
+        "symfony/http-kernel": "^7.4||^8.0",
+        "symfony/serializer": "^7.4||^8.0",
+        "symfony/translation": "^7.4||^8.0"
     },
     "require-dev": {
         "codeception/codeception": "^5.1",
         "codeception/module-asserts": "^3.0",
         "codeception/module-phpbrowser": "*",
         "friendsofphp/php-cs-fixer": "^3.26",
-        "symfony/property-access": "^7.4"
+        "symfony/property-access": "^7.4||^8.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
