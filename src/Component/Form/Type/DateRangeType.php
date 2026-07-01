@@ -24,7 +24,7 @@ class DateRangeType extends AbstractType implements DataMapperInterface
         ]);
     }
 
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('beginDate', DateType::class, ['required' => false, 'label' => $options['begin_label'] ?? t('form.type.daterange.begin.label', domain: 'SprintFDatetimeBundle')])
