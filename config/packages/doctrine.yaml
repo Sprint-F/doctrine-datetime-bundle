@@ -2,11 +2,15 @@ doctrine:
     dbal:
         types:
             date: 'SprintF\Bundle\Datetime\Doctrine\DBAL\Types\DateType'
+            date_immutable: 'SprintF\Bundle\Datetime\Doctrine\DBAL\Types\DateImmutableType'
             datetime: 'SprintF\Bundle\Datetime\Doctrine\DBAL\Types\DateTimeType'
+            datetime_immutable: 'SprintF\Bundle\Datetime\Doctrine\DBAL\Types\DateTimeImmutableType'
             daterange: 'SprintF\Bundle\Datetime\Doctrine\DBAL\Types\DateRangeType'
         mapping_types:
             date: date
+            date_immutable: date_immutable
             datetime: datetime
+            datetime_immutable: datetime_immutable
             daterange: daterange
     orm:
         dql:
