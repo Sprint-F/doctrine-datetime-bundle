@@ -6,7 +6,7 @@ use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;
 use SprintF\ValueObjects\Type\DateTimeImmutable;
 
-class DateTimeImmutableType extends \Doctrine\DBAL\Types\DateTimeType
+class DateTimeImmutableType extends \Doctrine\DBAL\Types\DateTimeImmutableType
 {
     public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
     {
