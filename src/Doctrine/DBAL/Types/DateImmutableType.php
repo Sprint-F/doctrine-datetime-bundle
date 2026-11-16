@@ -3,7 +3,7 @@
 namespace SprintF\Bundle\Datetime\Doctrine\DBAL\Types;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
-use Doctrine\DBAL\Types\ConversionException;
+use Doctrine\DBAL\Types\Exception\InvalidFormat;
 use SprintF\ValueObjects\Type\DateImmutable;
 
 class DateImmutableType extends \Doctrine\DBAL\Types\DateImmutableType
@@ -36,6 +36,6 @@ class DateImmutableType extends \Doctrine\DBAL\Types\DateImmutableType
             return $date;
         }
 
-        throw ConversionException::conversionFailedFormat($value, $this->getName(), $platform->getDateFormatString());
+        throw InvalidFormat::new($value, static::class, $platform->getDateFormatString());
     }
 }
